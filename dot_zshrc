@@ -1,0 +1,29 @@
+HISTFILE=~/.histfile
+HISTSIZE=2500
+SAVEHIST=2500
+setopt extendedglob
+bindkey -v
+
+# fzf
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+ zinit light-mode for \
+     zdharma-continuum/zinit-annex-as-monitor \
+     zdharma-continuum/zinit-annex-bin-gem-node \
+     zdharma-continuum/zinit-annex-patch-dl \
+     zdharma-continuum/zinit-annex-rust
+### End of Zinit's installer chunk
+
+zinit light "starship/starship"
+
+zinit light-mode for \
+  "zsh-users/zsh-autosuggestions" \
+  "marlonrichert/zsh-autocomplete" \
+  "zsh-users/zsh-completions"

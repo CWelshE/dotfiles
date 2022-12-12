@@ -1,0 +1,2 @@
+export PATH=/home/codyw/.local/bin:$PATH
+export PATH=/home/codyw/.cargo/bin:$PATH
