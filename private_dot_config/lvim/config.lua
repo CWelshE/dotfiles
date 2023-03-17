@@ -72,19 +72,19 @@ lvim.builtin.treesitter.highlight.enable = true
 -- end
 
 lvim.plugins = {
-  -- {
-  --   "kylechui/nvim-surround",
-  --   config = require("nvim-surround").setup()
-  -- },
+  {
+    "kylechui/nvim-surround",
+    config = require("nvim-surround").setup()
+  },
   -- {
   --   "rafcamlet/nvim-luapad",
   --   requires = "antoinemadec/FixCursorHold.nvim"
   -- },
-  -- {
-  --   "ggandor/leap.nvim",
-  --   requires = "tpope/vim-repeat",
-  --   config = require('leap').set_default_keymaps()
-  -- },
+  {
+    "ggandor/leap.nvim",
+    requires = "tpope/vim-repeat",
+    config = require('leap').set_default_keymaps()
+  },
   {
     "glepnir/lspsaga.nvim",
     branch = "main",
@@ -95,12 +95,12 @@ lvim.plugins = {
       })
     end,
   },
-  -- {
-  --   "simrat39/symbols-outline.nvim",
-  --   config = function()
-  --     require("symbols-outline").setup()
-  --   end,
-  -- }
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require("symbols-outline").setup()
+    end,
+  }
 }
 
 vim.api.nvim_create_autocmd("BufEnter", {
