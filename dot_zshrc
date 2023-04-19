@@ -1,3 +1,9 @@
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 HISTFILE=~/.histfile
 HISTSIZE=2500
 SAVEHIST=2500
@@ -21,9 +27,8 @@ autoload -Uz _zinit
      zdharma-continuum/zinit-annex-rust
 ### End of Zinit's installer chunk
 
-zinit light "starship/starship"
-
 zinit light-mode for \
   "zsh-users/zsh-autosuggestions" \
   "marlonrichert/zsh-autocomplete" \
   "zsh-users/zsh-completions"
+eval "$(starship init zsh)"
